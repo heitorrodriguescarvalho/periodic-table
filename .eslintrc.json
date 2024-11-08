@@ -1,0 +1,31 @@
+{
+  "extends": ["@rocketseat/eslint-config/next", "next/core-web-vitals", "next/typescript"],
+  "plugins": ["eslint-plugin-import-helpers"],
+  "rules": {
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "/^next/",
+          "module",
+          "/@[a-zA-Z0-9-_]/",
+          ["/^src/db/", "/@/db/"],
+          ["/^src/lib/", "/@/lib/"],
+          ["/^src/utils/", "/@/utils/"],
+          ["/^src/features/", "/@/features/"],
+          ["/^src/hooks/", "/@/hooks/"],
+          ["/^src/providers/", "/@/providers/"],
+          ["/^src/components/", "/@/components/"],
+          ["/^src/", "/@/"],
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": {
+          "order": "asc",
+          "ignoreCase": true 
+        }
+      }
+    ]
+  }
+}
